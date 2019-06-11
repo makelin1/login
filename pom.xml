@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.21.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>springboot-1</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>springboot-1</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<commons.io.version>2.4</commons.io.version>
+		<commons.fileupload.version>1.3.1</commons.fileupload.version>
+		<commons.collections.version>3.2</commons.collections.version>
+		<commons.beanutils.version>1.9.2</commons.beanutils.version>
+		<commons.codec.version>1.10</commons.codec.version>
+		<commons.lang3.version>3.6</commons.lang3.version>
+		<guava.version>23.0</guava.version>
+	</properties>
+	
+	
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<!-- <scope>test</scope> --><!-- 不只在test下使用 -->
+		</dependency>
+
+		<!-- axis 1.4 jar start -->
+        <dependency>
+            <groupId>org.apache.axis</groupId>
+            <artifactId>axis</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-discovery</groupId>
+            <artifactId>commons-discovery</artifactId>
+            <version>0.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis</groupId>
+            <artifactId>axis-jaxrpc</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.axis</groupId>
+            <artifactId>axis-saaj</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>wsdl4j</groupId>
+            <artifactId>wsdl4j</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <!-- axis 1.4 jar end -->
+        
+		<!-- webservice -->
+		<dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+            <version>3.1.12</version>
+        </dependency>
+        <dependency>
+		     <groupId>org.apache.cxf</groupId>
+		     <artifactId>cxf-rt-transports-http</artifactId>
+		     <version>3.1.6</version>
+		 </dependency>
+
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+		</dependency>
+			
+		<dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+		<dependency>
+	        <groupId>mysql</groupId>
+	        <artifactId>mysql-connector-java</artifactId>
+	    </dependency>
+    
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		
+		<dependency>  
+		    <groupId>org.springframework.boot</groupId>  
+		    <artifactId>spring-boot-starter-data-redis</artifactId>  
+		</dependency>
+		
+		<!-- swagger -->
+		<dependency>
+
+            <groupId>io.springfox</groupId>
+
+            <artifactId>springfox-swagger2</artifactId>
+
+            <version>2.2.2</version>
+
+        </dependency>
+
+        <dependency>
+
+            <groupId>io.springfox</groupId>
+
+            <artifactId>springfox-swagger-ui</artifactId>
+
+            <version>2.2.2</version>
+
+        </dependency>
+        
+        
+        <!-- ******************************* 常用依赖库 ********************************** -->
+		<!-- 针对开发IO流功能的工具类库 -->
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>${commons.io.version}</version>
+		</dependency>
+		<!-- 文件上传 -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>${commons.fileupload.version}</version>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>commons-io</groupId>
+		            <artifactId>commons-io</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+		<!-- 常用的集合操作，丰富的工具类 -->
+		<dependency>
+		    <groupId>commons-collections</groupId>
+		    <artifactId>commons-collections</artifactId>
+		    <version>${commons.collections.version}</version>
+		</dependency>
+		<!-- 操作javabean的工具包 -->
+		<dependency>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
+		    <version>${commons.beanutils.version}</version>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>commons-collections</groupId>
+		            <artifactId>commons-collections</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+		<!-- 包含一些通用的编码解码算法. 如：MD5、SHA1、Base64等 -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>${commons.codec.version}</version>
+		</dependency>
+		<!-- 包含丰富的工具类如 StringUtils -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>${commons.lang3.version}</version>
+		</dependency>
+		<!--
+		    Guava工程包含了若干被Google的Java项目广泛依赖的核心库. 集合[collections] 、缓存[caching] 、原生类型支持[primitives support] 、
+		    并发库[concurrency libraries] 、通用注解[common annotations] 、字符串处理[string processing] 、I/O 等等。
+		-->
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>${guava.version}</version>
+		</dependency>
+		
+		<!--janino-->
+        <!--若用到了logback的if标签的condition表达式，就需要该坐标-->
+        <!--否则会抛出该错误：ERROR in ch.qos.logback.core.joran.conditional.IfAction - Could not find Janino library on the class path. Skipping conditional processing.-->
+        <!-- <dependency>
+            <groupId>org.codehaus.janino</groupId>
+            <artifactId>janino</artifactId>
+        	<version>2.7.8</version>
+        </dependency> -->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
